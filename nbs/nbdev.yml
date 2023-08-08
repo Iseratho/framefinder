@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "framefinder"
+  site-url: "https://Iseratho.github.io/framefinder"
+  description: ""
+  repo-branch: main
+  repo-url: "https://github.com/Iseratho/framefinder"
