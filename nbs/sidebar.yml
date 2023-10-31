@@ -1,0 +1,9 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_core.ipynb
+      - 01_frame_labels.ipynb
+      - 02_frame_dimensions.ipynb
+      - 03_frame_structure.ipynb
+      - 04_examples.ipynb
