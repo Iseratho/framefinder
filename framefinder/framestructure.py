@@ -17,13 +17,13 @@ class FramingStructure:
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
         self.translator = pipeline("text2text-generation", base_model, device=device, max_length=300)
 
-    def __call__(self, sequence_to_translate):
+    def __call__(self, sequence_to_translate, error_type=None):
         res = self.translator(sequence_to_translate)
         def try_decode(x):
             try:
                 return penman.decode(x["generated_text"])
             except:
-                return None
+                return error_type  # None type will be filtered below.
         graphs = list(filter(lambda item: item is not None, [try_decode(x) for x in res]))
         return graphs
 
